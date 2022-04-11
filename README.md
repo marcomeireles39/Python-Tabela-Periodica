@@ -57,4 +57,6 @@ __Como usar :__
 
 
 __OBS:__
-Os dados da biblioteca Bd.py poderam ser visto em um dos repositórios aqui criados.
+Os dados da biblioteca Bd.py poderam ser visto em um dos repositórios aqui criados e como atualização usei
+uma biblioteca para tradução dos dados que estavam em inglês é a biblioteca https://github.com/avedensky/google-translate-python
+do programador Alexey Vedensky.

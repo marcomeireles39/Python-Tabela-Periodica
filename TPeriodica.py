@@ -5,6 +5,8 @@
 import json
 import requests
 from Bd import Bd_sql
+from translate import Translator
+
 class Tabela_Periodica:
 
     """_summary_
@@ -12,6 +14,7 @@ class Tabela_Periodica:
     e facilitar a obtenção de dados da tabela periodica
     """
     conteudo = None
+    
     Natomico = int(0)   
     def __init__(self, natomico):
         """_sumário_
@@ -52,17 +55,20 @@ class Tabela_Periodica:
         valor = ''
         i = int(0)
         for di in dic:
+            di2= Translator(to_lang="pt")
+            di2 = di2.translate(dic[di])
+            
             i += 1
             if (i < len(dic)):
                 if (cindice == True):
                     indice +='{} text, '.format(di)
                 if (cvalor == True):
-                    valor += "'{}', ".format(dic[di])
+                    valor += "'{}', ".format(di2)
             else:
                 if (cindice == True):
                     indice +='{} text '.format(di)
                 if (cvalor == True):                    
-                    valor += "'{}' ".format(dic[di])
+                    valor += "'{}' ".format(di2)
         
         db = Bd_sql('tabela_periodica.db','elementos') 
         db.Criar_bd(indice)
